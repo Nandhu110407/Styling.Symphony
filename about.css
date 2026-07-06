@@ -1,0 +1,254 @@
+.page-banner {
+height: 55vh;
+min-height: 380px;
+background:
+linear-gradient(rgba(26,26,26,0.5), rgba(26,26,26,0.5)),
+url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1800&q=80') center/cover no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: var(--white);
+}
+
+.page-banner .kicker {
+font-size: 12px;
+letter-spacing: 5px;
+text-transform: uppercase;
+color: var(--gold);
+display: block;
+margin-bottom: 18px;
+}
+
+.page-banner h1 {
+color: var(--white);
+font-size: clamp(42px, 5.5vw, 70px);
+font-style: italic;
+font-weight: 400;
+}
+
+/* Intro block */
+.intro { padding: 90px 0 60px; text-align: center; }
+
+.intro .quote {
+max-width: 780px;
+margin: 0 auto;
+font-family: 'Playfair Display', serif;
+font-size: clamp(24px, 3vw, 34px);
+font-style: italic;
+line-height: 1.5;
+color: var(--charcoal);
+}
+
+.intro .quote::before,
+.intro .quote::after {
+content: '"';
+color: var(--gold);
+font-size: 60px;
+vertical-align: -18px;
+}
+
+.intro .signature {
+margin-top: 30px;
+font-size: 13px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(--muted);
+}
+
+/* STORY SECTION FIX (IMPORTANT) */
+.story-block {
+padding: 70px 0;
+background: var(--ivory);
+}
+
+.story-split {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 40px; /* reduced gap */
+flex-wrap: wrap;
+}
+
+/* reverse layout */
+.story-split.reverse {
+flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.story-img {
+flex: 1;
+max-width: 48%;
+height: 400px; /* reduced height */
+overflow: hidden;
+}
+
+.story-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.6s ease;
+}
+
+.story-img:hover img {
+transform: scale(1.05);
+}
+
+/* TEXT */
+.story-text {
+flex: 1;
+max-width: 48%;
+}
+
+.story-text .kicker {
+font-size: 12px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(--gold);
+}
+
+.story-text h2 {
+font-size: 36px;
+margin: 12px 0 16px;
+line-height: 1.2;
+}
+
+.story-text p {
+color: var(--muted);
+font-size: 15px;
+margin-bottom: 12px;
+}
+
+/* Values */
+.values { padding: 90px 0; background: var(--cream); }
+
+.values-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+margin-top: 50px;
+}
+
+.value-card {
+background: var(--white);
+padding: 40px 28px;
+text-align: center;
+border: 1px solid var(--line);
+transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.value-card:hover {
+transform: translateY(-6px);
+box-shadow: var(--shadow);
+}
+
+.value-card .icon {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: var(--ivory);
+color: var(--gold);
+font-size: 22px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+}
+
+.value-card h3 {
+font-size: 20px;
+margin-bottom: 10px;
+}
+
+.value-card p {
+color: var(--muted);
+font-size: 14px;
+}
+
+/* Team */
+.team { padding: 90px 0; background: var(--ivory); }
+
+.team-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+margin-top: 50px;
+}
+
+.team-photo {
+height: 300px;
+overflow: hidden;
+margin-bottom: 16px;
+}
+
+.team-photo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: grayscale(20%);
+transition: filter 0.5s, transform 0.6s;
+}
+
+.team-card:hover .team-photo img {
+filter: grayscale(0%);
+transform: scale(1.05);
+}
+
+/* Numbers */
+.numbers {
+padding: 70px 0;
+background: var(--charcoal);
+color: var(--white);
+}
+
+.numbers-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+text-align: center;
+}
+
+.number-item h3 {
+font-size: 48px;
+color: var(--gold);
+font-family: 'Playfair Display', serif;
+}
+
+.number-item p {
+font-size: 12px;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: rgba(255,255,255,0.65);
+margin-top: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+.story-split {
+flex-direction: column;
+gap: 25px;
+}
+
+.story-img,
+.story-text {
+max-width: 100%;
+}
+
+.story-img {
+height: 300px;
+}
+
+.values-grid,
+.team-grid,
+.numbers-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 600px) {
+.values-grid,
+.team-grid,
+.numbers-grid {
+grid-template-columns: 1fr;
+}
+}

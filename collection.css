@@ -1,0 +1,180 @@
+:root {
+  --white: #ffffff;
+  --gold: #c5a880; /* Or your preferred gold hex */
+  --cream: #fdfbf7;
+  --charcoal: #1a1a1a;
+}
+
+.page-banner {
+  height: 50vh;
+  min-height: 340px;
+  background:
+    linear-gradient(rgba(26,26,26,0.5), rgba(26,26,26,0.5)),
+    url('https://images.pexels.com/photos/7679444/pexels-photo-7679444.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-banner .kicker {
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.page-banner h1 {
+  color: var(--white);
+  font-size: clamp(42px, 5.5vw, 70px);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Filter bar */
+.filter-bar {
+  padding: 40px 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--charcoal);
+}
+
+.filter-list {
+  display: flex;
+  gap: 34px;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.filter-list li {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  cursor: pointer;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.filter-list li:hover,
+.filter-list li.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* Products grid */
+.collection-grid-section {
+  padding: 80px 0 110px;
+  background: var(--cream);
+}
+
+.coll-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+}
+
+.coll-card {
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.coll-card:hover { transform: translateY(-6px); }
+
+.coll-image {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.coll-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.coll-card:hover .coll-image img { transform: scale(1.06); }
+
+.coll-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 6px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.coll-badge.gold { background: var(--gold); }
+
+.coll-info {
+  padding: 22px 4px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.coll-info .details h4 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.coll-info .details p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+.coll-info .price {
+  color: var(--gold);
+  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Lookbook */
+.lookbook {
+  padding: 110px 0;
+  background: var(--cream);
+}
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.look-item {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.look-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s;
+  filter: brightness(0.95);
+}
+
+.look-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 992px) {
+  .coll-grid { grid-template-columns: repeat(2, 1fr); }
+  .lookbook-grid { grid-template-columns: 1fr; }
+  .look-item { height: 340px; }
+}
+@media (max-width: 600px) {
+  .coll-grid { grid-template-columns: 1fr; }
+  .coll-image { height: 380px; }
+}
